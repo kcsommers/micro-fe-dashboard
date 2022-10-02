@@ -5,14 +5,9 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const deps = require('./package.json').dependencies;
-const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 module.exports = (env) => {
   return {
-    output: {
-      publicPath: ASSET_PATH,
-    },
-
     resolve: {
       extensions: ['.tsx', '.ts', '.jsx', '.js', '.json', '.scss'],
     },
@@ -103,7 +98,7 @@ module.exports = (env) => {
         template: './src/index.html',
         excludeChunks: ['dashboard'],
       }),
-      new EnvironmentPlugin(['ASSET_PATH', 'COMPONENTS_PATH', 'SEARCH_PATH']),
+      new EnvironmentPlugin(['COMPONENTS_PATH', 'SEARCH_PATH']),
     ],
   };
 };
