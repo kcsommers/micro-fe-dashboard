@@ -5,5 +5,9 @@ declare module 'kc_components/ui/Button' {
 }
 
 declare module 'kc_components/theme' {
-  export const ThemeModule: React.ComponentType<any>;
+  export const BaseTheme: React.ComponentType<any>;
+}
+
+declare module 'kc_components/global-styles' {
+  export default '';
 }

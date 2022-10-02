@@ -1,20 +1,25 @@
 import React from 'react';
+import { BaseTheme } from 'kc_components/theme';
+import { Button } from 'kc_components/ui/Button';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { DashboardPage } from './pages/dashboard';
-import { Button } from 'kc_components/ui/Button';
-
 import './index.scss';
+import { DashboardPage } from './pages/dashboard';
+import 'kc_components/global-styles';
 
 const App = () => (
-  <div className='flex flex-col min-h-screen'>
-    <Button text='Hello' />
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<DashboardPage />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
+  <BaseTheme>
+    <div className='flex flex-column min-h-screen'>
+      <div>
+        <Button text='Hello' />
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<DashboardPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  </BaseTheme>
 );
 const container = document.getElementById('app');
 const root = createRoot(container);
