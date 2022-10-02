@@ -78,6 +78,9 @@ module.exports = (env) => {
           search: process.env.SEARCH_PATH,
           kc_components: process.env.COMPONENTS_PATH,
         },
+        exposes: {
+          './DashboardApp': './src/App.tsx',
+        },
         shared: {
           ...deps,
           react: {

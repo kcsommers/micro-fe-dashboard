@@ -1,7 +1,7 @@
 import React from 'react';
 import 'kc_components/global-styles';
 import { BaseTheme } from 'kc_components/theme';
-import { Button } from 'kc_components/ui/Button';
+import { Layout } from 'kc_components/ui/Layout';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.scss';
@@ -9,16 +9,13 @@ import { DashboardPage } from './pages/dashboard';
 
 const App = () => (
   <BaseTheme>
-    <div className='flex flex-column min-h-screen'>
-      <div>
-        <Button text='Hello' />
-      </div>
+    <Layout>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<DashboardPage />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </Layout>
   </BaseTheme>
 );
 const container = document.getElementById('app');
