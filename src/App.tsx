@@ -1,11 +1,11 @@
 import React from 'react';
+import 'kc_components/global-styles';
 import { BaseTheme } from 'kc_components/theme';
 import { Button } from 'kc_components/ui/Button';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.scss';
 import { DashboardPage } from './pages/dashboard';
-import 'kc_components/global-styles';
 
 const App = () => (
   <BaseTheme>
